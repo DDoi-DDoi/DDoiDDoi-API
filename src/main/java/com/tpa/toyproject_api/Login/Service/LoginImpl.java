@@ -1,4 +1,4 @@
-package com.tpa.toyproject_api.Login.Service;
+/*package com.tpa.toyproject_api.Login.Service;
 
 import com.tpa.toyproject_api.Login.Dto.MemberDto;
 import com.tpa.toyproject_api.Login.Entity.Member;
@@ -37,4 +37,4 @@ public class LoginImpl{
         return true;
     }
 
-}
+}*/

@@ -1,29 +1,36 @@
 import React, { useState } from 'react';
 
 function Login() {
-    const [userName, setUserName] = useState('');
+    const [userId, setUserId] = useState('');
     const [userPassword, setUserPassword] = useState('');
+    const [userName, setUserName] = useState('');
     const [loginResult, setLoginResult] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         // 서버에 로그인 요청 보내기
-        const response = await fetch('/login', {
+        const response = await fetch('http://localhost:8080/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ userName, userPassword }),
+            body: JSON.stringify({ userId, userPassword }),
+            mode: 'cors',
         });
 
         // 서버의 응답 받기
-        const data = await response.json();
-
-        // 응답 처리
         if (response.ok) {
-            setLoginResult('Login success');
+            const data = await response.json();
+            if (data.status === 'success') {
+                setUserName(data.userName);
+                setLoginResult(`Login success. Welcome, ${data.userName}!`);
+            } else {
+                setUserName('');
+                setLoginResult('Fail');
+            }
         } else {
+            setUserName('');
             setLoginResult('Fail');
         }
     };
@@ -34,10 +41,10 @@ function Login() {
             <form onSubmit={handleSubmit} id="login-form">
                 <input
                     type="text"
-                    name="userName"
-                    placeholder="Email"
-                    value={userName}
-                    onChange={(event) => setUserName(event.target.value)}
+                    name="userId"
+                    placeholder="User ID"
+                    value={userId}
+                    onChange={(event) => setUserId(event.target.value)}
                 />
                 <input
                     type="password"
