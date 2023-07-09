@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
 
     function handleLoginClick(){
-        //navigate('/login');
+        navigate('/login');
     };
 
     const handleSignupClick = () => {

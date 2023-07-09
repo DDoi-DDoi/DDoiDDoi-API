@@ -5,9 +5,12 @@ import Login from './Login';
 
 function App() {
     return (
-        <div className="App">
-            <Home></Home>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 

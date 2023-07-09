@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
@@ -6,6 +7,7 @@ function Login() {
     const [userPassword, setUserPassword] = useState('');
     const [userName, setUserName] = useState('');
     const [loginResult, setLoginResult] = useState('');
+    const navigate = useNavigate(); // useNavigate 훅 사용
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -25,20 +27,21 @@ function Login() {
             const data = await response.json();
             if (data.status === 'success') {
                 setUserName(data.userName);
-                setLoginResult(`Login success. Welcome, ${data.userName}!`);
+                setLoginResult(`로그인 성공, userName : ${data.userName}`);
+                //navigate('/home'); // 로그인 성공 시 Home 페이지로 이동
             } else {
                 setUserName('');
-                setLoginResult('Fail');
+                setLoginResult('로그인 실패.');
             }
         } else {
             setUserName('');
-            setLoginResult('Fail');
+            setLoginResult('로그인 실패.');
         }
     };
 
     return (
         <div className="login-wrapper">
-            <h2>Login</h2>
+            <h2>로그인</h2>
             <form onSubmit={handleSubmit} id="login-form">
                 <input
                     type="text"
