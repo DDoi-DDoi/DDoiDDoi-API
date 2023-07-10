@@ -1,0 +1,51 @@
+.login-wrapper {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.login-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-wrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-wrapper input[type="text"],
+.login-wrapper input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-wrapper label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.login-wrapper input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.login-wrapper input[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.login-wrapper p {
+    text-align: center;
+    margin-top: 10px;
+}
