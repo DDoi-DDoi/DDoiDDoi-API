@@ -8,7 +8,7 @@ const Chat = () => {
 
     useEffect(() => {
         // WebSocket 연결 설정
-        const ws = new WebSocket('ws://port-0-ddoiddoi-api-7xwyjq992llj5bmtue.sel4.cloudtype.app/chat');
+        const ws = new WebSocket('wss://port-0-ddoiddoi-api-7xwyjq992llj5bmtue.sel4.cloudtype.app/chat');
 
         ws.onopen = () => {
             console.log('WebSocket 연결이 열렸습니다.');
