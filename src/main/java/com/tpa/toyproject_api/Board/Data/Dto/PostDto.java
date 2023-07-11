@@ -5,10 +5,10 @@ import lombok.Data;
 
 @Data
 public class PostDto {
-    int postId;
+    int pid;
     String id;
     String title;
     String text;
     int views;
-    int thumsUp;
+    int up;
 }

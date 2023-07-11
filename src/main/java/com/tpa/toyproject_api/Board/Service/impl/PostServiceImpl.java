@@ -18,16 +18,16 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public PostResponseDto getPost(int postId) {
-        Post post = postDao.selectPost(postId);
+    public PostResponseDto getPost(int pid) {
+        Post post = postDao.selectPost(pid);
 
         PostResponseDto postResponseDto = new PostResponseDto();
-        postResponseDto.setPostId(post.getPostId());
+        postResponseDto.setPid(post.getPid());
         postResponseDto.setId(post.getId());
         postResponseDto.setText(post.getText());
         postResponseDto.setTitle(post.getTitle());
         postResponseDto.setViews(post.getViews());
-        postResponseDto.setThumsUp(post.getThumsUp());
+        postResponseDto.setUp(post.getUp());
 
         return postResponseDto;
     }
@@ -35,22 +35,22 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostResponseDto savePost(PostDto postDto) {
         Post post = new Post();
-        postDto.setPostId(post.getPostId());
+        postDto.setPid(post.getPid());
         postDto.setId(post.getId());
         postDto.setText(post.getText());
         postDto.setTitle(post.getTitle());
         postDto.setViews(post.getViews());
-        postDto.setThumsUp(post.getThumsUp());
+        postDto.setUp(post.getUp());
 
         Post savedPost = postDao.insertPost(post);
 
         PostResponseDto postResponseDto = new PostResponseDto();
-        postResponseDto.setPostId(savedPost.getPostId());
+        postResponseDto.setPid(savedPost.getPid());
         postResponseDto.setId(savedPost.getId());
         postResponseDto.setText(savedPost.getText());
         postResponseDto.setTitle(savedPost.getTitle());
         postResponseDto.setViews(savedPost.getViews());
-        postResponseDto.setThumsUp(savedPost.getThumsUp());
+        postResponseDto.setUp(savedPost.getUp());
 
         return postResponseDto;
     }

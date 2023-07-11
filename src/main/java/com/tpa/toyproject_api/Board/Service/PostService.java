@@ -4,7 +4,7 @@ import com.tpa.toyproject_api.Board.Data.Dto.PostDto;
 import com.tpa.toyproject_api.Board.Data.Dto.PostResponseDto;
 
 public interface PostService {
-    PostResponseDto getPost(int postId);
+    PostResponseDto getPost(int pid);
 
     PostResponseDto savePost(PostDto postDto);
 }

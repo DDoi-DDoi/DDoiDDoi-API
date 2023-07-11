@@ -1,5 +1,6 @@
 package com.tpa.toyproject_api.Board.Controller;
 
+import com.tpa.toyproject_api.Board.Data.Dto.PostDto;
 import com.tpa.toyproject_api.Board.Data.Dto.PostResponseDto;
 import com.tpa.toyproject_api.Board.Service.PostService;
 import org.apache.coyote.Request;
@@ -24,24 +25,28 @@ public class BoardController {
     }
 
     @GetMapping("/post")
-    public ResponseEntity<PostResponseDto> getPost(int postId) {
-        PostResponseDto postResponseDto = postService.getPost(postId);
+    public ResponseEntity<PostResponseDto> getPost(int pid) {
+        PostResponseDto postResponseDto = postService.getPost(pid);
 
         return ResponseEntity.status(HttpStatus.OK).body(postResponseDto);
     }
 
     @PostMapping("/post")
-    public String postPost() {
-        return "ok";
+    public ResponseEntity<PostResponseDto> createPost(@RequestBody PostDto postDto) {
+        PostResponseDto postResponseDto = postService.savePost(postDto);
+
+        return ResponseEntity.status(HttpStatus.OK).body(postResponseDto);
     }
 
     @PutMapping("/post")
-    public String putPost() {
+    public String updatePost() {
+
         return "ok";
     }
 
     @DeleteMapping("/post")
     public String deletePost() {
+
         return "ok";
     }
 }

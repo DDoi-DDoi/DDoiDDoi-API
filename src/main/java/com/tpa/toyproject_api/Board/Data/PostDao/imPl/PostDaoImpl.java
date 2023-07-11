@@ -24,21 +24,21 @@ public class PostDaoImpl implements PostDao {
     }
 
     @Override
-    public Post selectPost(int postId) {
-        Post selectedPost = boardRepository.getById(postId);
+    public Post selectPost(int pid) {
+        Post selectedPost = boardRepository.getByPid(pid);
 
         return selectedPost;
     }
 
     @Override
-    public Post updatePost(int postId, int thumsUp, int views) throws Exception {
-        Optional<Post> selectedPost = boardRepository.findById(postId);
+    public Post updatePost(int pid, int Up, int views) throws Exception {
+        Optional<Post> selectedPost = boardRepository.findById(pid);
 
         Post updatePost;
         if (selectedPost.isPresent()) {
             Post post = selectedPost.get();
 
-            post.setThumsUp(thumsUp);
+            post.setUp(Up);
             post.setViews(views);
 
             updatePost = boardRepository.save(post);
@@ -49,8 +49,8 @@ public class PostDaoImpl implements PostDao {
     }
 
     @Override
-    public void deletePost(int postId) throws Exception {
-        Optional<Post> selectedPost = boardRepository.findById(postId);
+    public void deletePost(int pid) throws Exception {
+        Optional<Post> selectedPost = boardRepository.findById(pid);
 
         if (selectedPost.isPresent()) {
             Post post = selectedPost.get();
