@@ -1,10 +1,9 @@
 package com.tpa.toyproject_api.Board.Data.Dto;
 
-
 import lombok.Data;
 
 @Data
-public class PostDto {
+public class PostResponseDto {
     int postId;
     String id;
     String title;

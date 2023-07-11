@@ -1,8 +1,10 @@
 package com.tpa.toyproject_api.Board.Service;
 
 import com.tpa.toyproject_api.Board.Data.Dto.PostDto;
+import com.tpa.toyproject_api.Board.Data.Dto.PostResponseDto;
 
 public interface PostService {
-    PostDto getPost(int postId);
-    PostDto savePost(int postId, String id, String text);
+    PostResponseDto getPost(int postId);
+
+    PostResponseDto savePost(PostDto postDto);
 }
