@@ -11,6 +11,7 @@ pid INT PRIMARY KEY,
 id VARCHAR(255),
 title VARCHAR(255),
 text VARCHAR(255),
+
 views INT,
 up INT
 );
