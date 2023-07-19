@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
@@ -8,6 +8,17 @@ function Login() {
     const [userName, setUserName] = useState('');
     const [loginResult, setLoginResult] = useState('');
     const navigate = useNavigate(); // useNavigate 훅 사용
+
+    useEffect(() => {
+        // 로그인 정보를 로컬 스토리지에서 가져와서 userName 상태를 설정합니다.
+        const storedUserId = localStorage.getItem('userId');
+        const storedUserPassword = localStorage.getItem('userPassword');
+
+        if (storedUserId && storedUserPassword) {
+            setUserId(storedUserId);
+            setUserPassword(storedUserPassword);
+        }
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -25,10 +36,16 @@ function Login() {
         // 서버의 응답 받기
         if (response.ok) {
             const data = await response.json();
+            console.log('Login Response:', data);
             if (data.status === 'success') {
                 setUserName(data.userName);
                 setLoginResult(`로그인 성공, userName : ${data.userName}`);
-                //navigate('/home'); // 로그인 성공 시 Home 페이지로 이동
+
+                // 로그인 정보를 로컬 스토리지에 저장
+                localStorage.setItem('userId', userId);
+                localStorage.setItem('userPassword', userPassword);
+
+                navigate('/home'); // 로그인 성공 시 Home 페이지로 이동
             } else {
                 setUserName('');
                 setLoginResult('로그인 실패.');
@@ -42,27 +59,31 @@ function Login() {
     return (
         <div className="login-wrapper">
             <h2>로그인</h2>
-            <form onSubmit={handleSubmit} id="login-form">
-                <input
-                    type="text"
-                    name="userId"
-                    placeholder="User ID"
-                    value={userId}
-                    onChange={(event) => setUserId(event.target.value)}
-                />
-                <input
-                    type="password"
-                    name="userPassword"
-                    placeholder="Password"
-                    value={userPassword}
-                    onChange={(event) => setUserPassword(event.target.value)}
-                />
-                <label htmlFor="remember-check">
-                    <input type="checkbox" id="remember-check" />
-                    아이디 저장하기
-                </label>
-                <input type="submit" value="Login" />
-            </form>
+            {userName ? (
+                <p>{`${userName} 님 안녕하세요.`}</p>
+            ) : (
+                <form onSubmit={handleSubmit} id="login-form">
+                    <input
+                        type="text"
+                        name="userId"
+                        placeholder="사용자 아이디"
+                        value={userId}
+                        onChange={(event) => setUserId(event.target.value)}
+                    />
+                    <input
+                        type="password"
+                        name="userPassword"
+                        placeholder="비밀번호"
+                        value={userPassword}
+                        onChange={(event) => setUserPassword(event.target.value)}
+                    />
+                    <label htmlFor="remember-check">
+                        <input type="checkbox" id="remember-check" />
+                        아이디 저장하기
+                    </label>
+                    <input type="submit" value="로그인" />
+                </form>
+            )}
             <p>{loginResult}</p>
         </div>
     );
