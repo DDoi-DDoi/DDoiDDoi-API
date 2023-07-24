@@ -1,0 +1,62 @@
+/* Register.css */
+
+/* Container */
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Heading */
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Field */
+.register-container div > label {
+    margin-bottom: 5px;
+}
+
+.register-container div > input,
+.register-container div > select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.register-container div > select {
+    padding: 6px;
+}
+
+/* Email Fields */
+.register-container div > span {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Submit Button */
+.register-container button[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-container button[type="submit"]:hover {
+    background-color: #0056b3;
+}

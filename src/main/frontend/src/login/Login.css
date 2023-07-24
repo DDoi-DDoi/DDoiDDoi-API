@@ -1,4 +1,6 @@
-.login-wrapper {
+/* Login.css */
+
+.login-container {
     width: 300px;
     margin: 0 auto;
     padding: 20px;
@@ -7,36 +9,36 @@
     background-color: #f5f5f5;
 }
 
-.login-wrapper h2 {
+.login-container h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.login-wrapper form {
+.login-container form {
     display: flex;
     flex-direction: column;
 }
 
-.login-wrapper input[type="text"],
-.login-wrapper input[type="password"] {
+.login-container input[type="text"],
+.login-container input[type="password"] {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
-.login-wrapper label {
+.login-container label {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     font-size: 14px;
 }
 
-.login-wrapper input[type="checkbox"] {
+.login-container input[type="checkbox"] {
     margin-right: 5px;
 }
 
-.login-wrapper input[type="submit"] {
+.login-container input[type="submit"] {
     padding: 10px;
     border-radius: 5px;
     background-color: #4caf50;
@@ -45,7 +47,7 @@
     cursor: pointer;
 }
 
-.login-wrapper p {
+.login-container p {
     text-align: center;
     margin-top: 10px;
 }

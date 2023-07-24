@@ -19,8 +19,7 @@ function Home() {
     }
 
     const handleSignupClick = () => {
-        // 회원 가입 버튼 클릭 시 동작하는 함수
-        // TODO: 회원 가입 처리 로직 작성
+        navigate('/register')
     };
 
     return (

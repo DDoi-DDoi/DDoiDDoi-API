@@ -1,4 +1,4 @@
-/*package com.tpa.toyproject_api.Login.Entity;
+package com.tpa.toyproject_api.Login.Entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,4 +41,4 @@ public class Member {
     public void setName(String name) {
         this.name = name;
     }
-}*/
+}
