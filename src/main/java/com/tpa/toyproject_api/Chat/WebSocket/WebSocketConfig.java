@@ -1,6 +1,5 @@
 package com.tpa.toyproject_api.Chat.WebSocket;
 
-import com.tpa.toyproject_api.Chat.handler.ChatHandler;
 import com.tpa.toyproject_api.Chat.handler.CustomChatHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +16,10 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(chatHandler, "/chat").setAllowedOrigins("*");
+        registry.addHandler(chatHandler, "/chat")
+                .setAllowedOrigins("*")
+                ;
     }
+
 }
 

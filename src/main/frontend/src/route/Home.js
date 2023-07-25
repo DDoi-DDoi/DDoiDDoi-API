@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Home.css';
+import '../css/Home.css';
 
 function Home() {
     const navigate = useNavigate();
@@ -24,7 +24,7 @@ function Home() {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <h1 style={{ margin: '0 auto' }}>게시판</h1>
                     <div>
-                        <a href="/board">더보기</a>
+                        <a href="/frontend/src/Board">더보기</a>
                     </div>
                 </div>
             </div>

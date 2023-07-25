@@ -1,0 +1,38 @@
+.uploader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-wrapper {
+    margin-bottom: 16px;
+}
+
+.upload-button {
+    display: flex;
+    gap: 8px;
+}
+
+.primary-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.upload-button {
+    background-color: #2196f3;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}

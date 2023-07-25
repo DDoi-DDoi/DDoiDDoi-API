@@ -1,5 +1,5 @@
 import React from 'react';
-import './Board.css';
+import '../css/Board.css';
 function Board() {
     const boardList = [
         { id: 1, author: 'John Doe', title: 'Lorem Ipsum', views: 10, date: '2023-07-01' },
