@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
-
+import button from './kakao_login_button.png';
 function Login() {
     const [userId, setUserId] = useState('');
     const [userPassword, setUserPassword] = useState('');
@@ -20,6 +20,22 @@ function Login() {
         }
     }, []);
 
+
+
+    const kakaoLogin = ()=>
+    {
+        const REST_API_KEY = "~~";
+        const REDIRECT_URI = "https://localhost:3000";
+        const link = `http://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+        const loginHandler = () =>{
+            window.location.href = link;
+        }
+        return (
+        <button type='button'>
+           <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=9c1334c51e7f951b09babbdf6384f381&redirect_uri=http://localhost:8080/auth/kakao/callback"><img src ={button}/></a>
+        </button>
+    );
+    }
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -57,7 +73,7 @@ function Login() {
     };
 
     return (
-        <div className="login-wrapper">
+        <div className="login-container">
             <h2>로그인</h2>
             {userName ? (
                 <p>{`${userName} 님 안녕하세요.`}</p>
@@ -85,6 +101,9 @@ function Login() {
                 </form>
             )}
             <p>{loginResult}</p>
+            <div>
+                {kakaoLogin()}
+            </div>
         </div>
     );
 }

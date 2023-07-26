@@ -1,4 +1,4 @@
-package com.tpa.toyproject_api.Security;
+/*package com.tpa.toyproject_api.Security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -34,5 +34,5 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder(){
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
-}
+}*/
 

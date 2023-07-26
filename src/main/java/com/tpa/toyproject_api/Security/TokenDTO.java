@@ -1,4 +1,4 @@
-package com.tpa.toyproject_api.Security;
+/*package com.tpa.toyproject_api.Security;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,3 +12,4 @@ public class TokenDTO {
     private String accessToken;
     private String refreshToken;
 }
+*/

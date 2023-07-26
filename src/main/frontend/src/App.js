@@ -5,6 +5,7 @@ import Login from './login/Login';
 import Board from "./Board";
 import Chat from "./chat/Chat";
 import Register from "./register/Register";
+import Redirection from "./Redirection";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/board" element={<Board />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/register" element={<Register />}/>
+                <Route exact path='/kakao/callback' element={<Redirection />} />
             </Routes>
         </BrowserRouter>
     );
