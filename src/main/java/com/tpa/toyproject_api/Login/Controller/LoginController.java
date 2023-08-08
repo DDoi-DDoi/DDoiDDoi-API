@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+
 public class LoginController {
 
     private static List<User> userList = new ArrayList<>();
@@ -17,6 +18,7 @@ public class LoginController {
         userList.add(new User("sang777", "eunsang", "asdzxc789"));
         userList.add(new User("ksg1885", "sangkyu", "123456"));
     }
+
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/login")

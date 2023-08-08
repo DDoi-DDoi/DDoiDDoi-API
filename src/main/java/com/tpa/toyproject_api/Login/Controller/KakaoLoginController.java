@@ -13,12 +13,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 
 @Controller
+@CrossOrigin("http://localhost:3000")
 public class KakaoLoginController {
     @GetMapping("/auth/kakao/callback")
     public @ResponseBody String kakaoCallback(String code) throws JsonProcessingException {

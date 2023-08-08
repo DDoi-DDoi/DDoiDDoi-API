@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import button from './kakao_login_button.png';
+
 function Login() {
     const [userId, setUserId] = useState('');
     const [userPassword, setUserPassword] = useState('');
@@ -31,10 +32,10 @@ function Login() {
             window.location.href = link;
         }
         return (
-        <button type='button'>
-           <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=9c1334c51e7f951b09babbdf6384f381&redirect_uri=http://localhost:8080/auth/kakao/callback"><img src ={button}/></a>
-        </button>
-    );
+            <button type='button'>
+                <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=9c1334c51e7f951b09babbdf6384f381&redirect_uri=http://localhost:8080/auth/kakao/callback"><img src ={button}/></a>
+            </button>
+        );
     }
     const handleSubmit = async (event) => {
         event.preventDefault();

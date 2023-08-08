@@ -27,8 +27,8 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
     implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
     //mairaDB
-    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    //implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.2-rc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.2-rc'
 
     //Swagger
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
